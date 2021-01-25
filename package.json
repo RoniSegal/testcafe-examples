@@ -10,10 +10,11 @@
   "dependencies": {
     "lodash": "^4.17.19",
     "nanoid": "^3.1.12",
-    "testcafe": "^1.8.8"
+    "testcafe": "^1.8.8",
+    "testcafe-reporter-custom": "^1.1.0"
   },
   "scripts": {
-    "examples": "testcafe chrome,firefox examples -a \"node server/index.js\"",
+    "examples": "testcafe chrome examples  --reporter custom -a \"node server/index.js\"",
     "mock-camera-microphone-access": " testcafe --hostname localhost \"chrome --use-fake-ui-for-media-stream --use-fake-device-for-media-stream\" detached-examples/mock-camera-microphone-access/mock-camera-microphone-access.js",
     "test": "npm run examples && npm run mock-camera-microphone-access"
   },
